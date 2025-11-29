@@ -1,0 +1,31 @@
+<div class="agregar">
+  <p>Agregar Tarea <button (click)="nuevaTarea()" class="Agg">+</button></p>
+</div>
+@if (newTask==true) {
+<div class="inputAgg">
+  <h2>Titulo</h2>
+  <input type="text" [(ngModel)]="newTarea" (focus)="haciendoFoco()" (blur)="saliendoDelFoco()" />
+  <br />
+  <button (click)="agregarTarea()">Agregar Tarea</button>
+  <p>Creando tarea: {{ newTarea }}</p>
+</div>
+}
+<ul>
+  @for (tarea of tareasList; track tarea.id) {
+  <hr />
+  <div [ngClass]="tarea.completada == 'si' ? 'completada' : 'noCompletada'">
+    <div class="dataContent">
+      <div class="data">
+        <h2>{{ tarea.titulo }}</h2>
+        <p>{{ tarea.descripcion }}</p>
+        <h5>Completada: {{ tarea.completada }}</h5>
+      </div>
+      <div class="buttons">
+        <button type="button" (click)="cambiarEstado(tarea.id)">Cambiar Estado</button>
+        <br />
+        <button (click)="eliminar(tarea.id)">Eliminar</button>
+      </div>
+    </div>
+  </div>
+  }
+</ul>

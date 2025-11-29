@@ -1,0 +1,16 @@
+button{
+  background-color: blue;
+  border-radius: 30px;
+  font-size: 2rem;
+}
+
+p{
+  font-size: 3rem;
+  text-align: center;
+}
+div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

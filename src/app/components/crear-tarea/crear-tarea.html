@@ -1,0 +1,10 @@
+<div>
+  <h1>Crear Tareas</h1>
+  <h2>Titulo</h2>
+  <input type="text" [(ngModel)]="inputTitulo" required />
+  <p>Titulo: {{ inputTitulo }}</p>
+  <h2>Descripcion</h2>
+  <input type="text" [(ngModel)]="inputDescripcion" />
+  <p>Descripción: {{ inputDescripcion }}</p>
+  <button (click)="agregarTarea()">Agregar Tarea</button>
+</div>
